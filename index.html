@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mathis Fituwi</title>
+  <link id="page_style" rel="stylesheet" href="styles/terminal.css">
+</head>
+
+<body>
+<div id="layout1">
+
+  <div id="terminal">
+    <a id="past_commands"></a>
+  </div>
+
+  <div id="command" onclick="document.getElementById('texter').focus();">
+    <textarea type="text" id="texter" autofocus></textarea>
+    <div id="liner">
+      <span id="typer"></span><b class="cursor" id="cursor">B</b>
+    </div>
+  </div>
+  
+</div>
+<div id="layout2">
+
+  <div id="modal">
+    <div class='modal-header'>
+      <div id='modal-filename'style="background-color: blue;">Filename.html</div>
+      <button class="button" onclick="exit(event)">&times;</button>
+    </div>
+    
+    <textarea id="modal_text"></textarea>
+  </div>
+
+  <div class="grid">
+    <div class="row">
+      <div class="item" ondrop="drop(event)"  ondragover="allowDrop(event)">
+        <div id="whois" ondblclick="edit(event, 'whois')" class="file">
+          <img src="static/resume.svg" alt="resume icon" draggable="true" ondragstart="drag(event)" width="80" height="80">
+          <div>whois.html</div>
+      </div>
+      </div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="projects" ondblclick="edit(event, 'projects')" class="file">
+          <img src="static/projects.svg" alt="projects icon" draggable="true" ondragstart="drag(event)" width="80" height="80">
+          <div>projects.html</div>
+      </div>
+      </div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="work" ondblclick="edit(event, 'work')" class="file">
+          <img src="static/work.svg" alt="work icon" draggable="true" ondragstart="drag(event)" width="80" height="80">
+          <div>work.html</div>
+      </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <div class="row">
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <div class="row">
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <div class="row">
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="item snailhome">
+    
+    <div class="bubble" onclick="gifText()" id="bubble">Who Is He??</div>
+        <img src="static/tv-time.gif" alt="snail" onclick="gifText()" width="200" height="100">
+        </div>
+    </div>
+
+
+    </div>
+
+  <div id="nav-bar">
+  <button class="button" id="gsh" onclick="style_terminal()"><img class="icon" src="static/terminal.svg" alt="terminal icon">gsh</button>
+  <button class="button" onclick="mail()"><img class="icon" src="static/mail.svg" alt="mail icon">mail</button>
+    <a href="https://www.leagueoflegends.com/en-us/download/" target="_blank" rel="noopener" style="text-decoration: none;">
+        <button class="button"><img class="icon" src="static/league of legends.svg" alt="league of legends icon">rot with me</button>
+    </a>
+    <div id="clock">
+        <img id="cal" src="static/calendar.svg" alt="calendar icon"/>
+        <div id="time">4:20 PM</div>
+      </div>
+  </div>
+  
+  </div>
+</div>
+
+
+
+<!-- Define and wrap js scripts in global scope, make sure they are loaded in appropriate order -->
+<script src="src/command.js"></script>
+<script src="src/gui.js"></script>
+<script src="src/terminal.js"></script> 
+<script src="src/main.js"></script>
+</body>
+</html>

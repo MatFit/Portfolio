@@ -1,0 +1,233 @@
+/* Hide unused terminal elements */
+#past_commands {
+    display: none;
+}
+
+#texter {
+    display: none;
+}
+
+#cursor {
+    display: none;
+}
+
+#layout1 {
+    visibility: hidden;
+    display: none;
+}
+
+.snailhome {
+    margin: 0;
+}
+/* Speech bubble arrow */
+.bubble {
+    width: 200px;
+    position: relative;
+    background: #50488f;
+    border-radius: 16px;
+    border-style: double;
+    border-width: 4px;
+    border-color: #000000;
+    padding: 16px;
+    text-align: center;
+    font-family: 'Fira Mono', monospace;
+}
+.bubble:hover {
+    background: #50488fbb;
+}
+.bubble:active {
+    background: #50488f;
+}
+body {
+    margin: 0;
+    width: 100%;
+    min-width: 550px;
+    color: #23231e;
+    background: radial-gradient(circle at 60% 40%, #2e8300 60%, #2d0033 100%);
+    font-family: 'Fira Mono', 'cursor', monospace;
+    overflow-x: hidden;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+}
+/* Fullscreen layout for GUI */
+#layout2 {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: radial-gradient(circle at 60% 40%, #9d660f 60%, #5b0966 100%);
+    /* Match body background for seamless GUI look */
+}
+/* Desktop navigation bar */
+#nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background: linear-gradient(90deg, #50488f 80%, #ffffff22 100%);
+    border-top: 2px solid #0000006f;
+}
+/* Full desktop grid */
+.grid {
+    position: fixed;
+    top: 0;
+    height: calc(100% - 2.5rem);
+    width: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(131,0,103,0.07) 0 2px,
+        transparent 2px 20%
+    );
+}
+/* Each row in the grid */
+.row {
+    display: inline-flex;
+    height: 20%;
+    width: 100%;
+    /* Each row takes 20% height */
+}
+/* Individual grid items for desktop icons*/
+.item {
+    display: flex;
+    width: 25%;
+    margin: 1.5vmin;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    background: transparent;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+/* Button in nav bar */
+.button {
+    margin-left: 1rem;
+    border-style: outset;
+    background: linear-gradient(90deg, #C0C0C0 80%, #fff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.button:active {
+    background: #fd050544;
+}
+
+.button:hover {
+    background: #b54f4f36;
+}
+
+/* Icon inside buttons */
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: .25rem;
+}
+
+/* Animate poppy modal */
+#modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+/* Modal styling, the modal is just the window popup */
+#modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 60%;
+    width: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 5px solid #830067;
+    border-style: outset;
+    background: linear-gradient(120deg, #C0C0C0 80%, #fff 100%);
+    max-width: 80%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1);
+    overflow: hidden;
+}
+/* Modal header styling */
+.modal-header {
+    background: linear-gradient(90deg, #d3d3d3 80%, #C0C0C0 100%);
+    display: flex;
+    padding-right: 8px;
+    height: 1.75rem;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    user-select: none;
+}
+/* Close button in modal header */
+#modal textarea {
+    width: 100%;
+    flex: 1 1 auto;
+    resize: none;
+    background: #bb4dc9;
+    /* Terminal dark textarea */
+    color: #f8f8f2;
+    border: none;
+    outline: none;
+    font-family: 'Fira Mono', monospace;
+    font-size: 1em;
+    padding: 8px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* Rounded textarea corners */
+    box-sizing: border-box;
+    min-height: 0;
+}
+
+
+
+/* Clock of desktop gui */
+#clock {
+    border-style: inset;
+    border-color: #830067;
+    display: inline-flex;
+    position: fixed;
+    padding: 0 .75rem;
+    right: 10px;
+
+    background: #C0C0C0cc;
+    /* Semi-transparent clock bg */
+    border-radius: 8px 0 0 8px;
+    /* Rounded left corners */
+    font-family: 'Fira Mono', monospace;
+    font-size: 1.1em;
+}
+/* Calendar icon in desktop */
+#cal {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Files of desktop gui */
+.file {
+    position: relative;
+    color : black;
+    height: 100%;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border-radius: 6px;
+    padding: 4px 8px;
+    transition: background 0.2s;
+}
+
+/* Hover over file */
+.file:hover {
+    background: rgba(255,255,255,0.06);
+}
